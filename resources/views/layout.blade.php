@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" dir="ltr">
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title>@yield('title', 'Examen Saber Pro')</title>
-    <meta name="description" content="Pruebas SaberPro - Universidad Popular del Cesar">
+    <meta name="description" content="Pruebas Saber Pro - Universidad Popular del Cesar">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#009688">
@@ -14,7 +14,7 @@
   </head>
   <body class="app sidebar-mini">
     <!-- Navbar-->
-    <header class="app-header"><a class="app-header__logo" href="#">ECAES</a>
+    <header class="app-header"><a class="app-header__logo" href="#">Saber Pro</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
@@ -58,12 +58,12 @@
           </ul>
         </li>
 
-      <li class="treeview"><a class="app-menu__item" href="{{route('')}}" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Facultades</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+      <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Facultades</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{route('facultad.index')}}"><i class="icon fa fa-circle-o"></i>Listado</a></li>
           <li><a class="treeview-item" href="{{route('facultad.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
-          <li><a class="treeview-item" href="{{route('facultad.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li>
-          <li><a class="treeview-item" href="{{route('')}}"><i class="icon fa fa-circle-o"></i>#4</a></li>
+          {{-- <li><a class="treeview-item" href="{{route('facultad.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li> --}}
+          <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>
       </li>
 
@@ -71,17 +71,17 @@
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{route('programa.index')}}"><i class="icon fa fa-circle-o"></i>Listado</a></li>
           <li><a class="treeview-item" href="{{route('programa.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
-          <li><a class="treeview-item" href="{{route('programa.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li>
-          <li><a class="treeview-item" href="{{route('')}}"><i class="icon fa fa-circle-o"></i>#4</a></li>
+          {{-- <li><a class="treeview-item" href="{{route('programa.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li> --}}
+          <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>
       </li>
 
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Competencias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{route('competencia.index')}}"><i class="icon fa fa-circle-o"></i>Listado</a></li>
-          <li><a class="treeview-item" href="{{route('ompetencia.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
-          <li><a class="treeview-item" href="{{route('ompetencia.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li>
-          <li><a class="treeview-item" href="{{route('')}}"><i class="icon fa fa-circle-o"></i>#4</a></li>
+          <li><a class="treeview-item" href="{{route('competencia.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
+          {{-- <li><a class="treeview-item" href="{{route('ompetencia.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li> --}}
+          <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>
       </li>
 
@@ -89,8 +89,8 @@
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{route('asignatura.index')}}"><i class="icon fa fa-circle-o"></i>Listado</a></li>
           <li><a class="treeview-item" href="{{route('asignatura.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
-          <li><a class="treeview-item" href="{{route('asignatura.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li>
-          <li><a class="treeview-item" href="{{route('')}}"><i class="icon fa fa-circle-o"></i>#4</a></li>
+          {{-- <li><a class="treeview-item" href="{{route('asignatura.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li> --}}
+          <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>
       </li>
 
@@ -98,8 +98,8 @@
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{route('pregunta.index')}}"><i class="icon fa fa-circle-o"></i>Listado</a></li>
           <li><a class="treeview-item" href="{{route('pregunta.create')}}"><i class="icon fa fa-circle-o"></i>Registrar</a></li>
-          <li><a class="treeview-item" href="{{route('pregunta.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li>
-          <li><a class="treeview-item" href="{{route('')}}"><i class="icon fa fa-circle-o"></i>#4</a></li>
+          {{-- <li><a class="treeview-item" href="{{route('pregunta.edit')}}"><i class="icon fa fa-circle-o"></i>Editar</a></li> --}}
+          <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>
       </li>
 
@@ -114,7 +114,7 @@
       <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-file-text"></i><span class="app-menu__label">Informes</span><i class="treeview-indicator fa fa-angle-right"></i></a>
         <ul class="treeview-menu">
           <li><a class="treeview-item" href="{{ route('vinforme.index') }}"><i class="icon fa fa-circle-o"></i>Generales</a></li>
-          <li><a class="treeview-item" href="{{route('vevaluacion.index')}}"><i class="icon fa fa-circle-o"></i>espesificos</a></li>
+          <li><a class="treeview-item" href="{{route('vevaluacion.index')}}"><i class="icon fa fa-circle-o"></i>especificos</a></li>
           <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#3</a></li>
           <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>#4</a></li>
         </ul>

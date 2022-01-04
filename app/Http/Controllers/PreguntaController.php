@@ -71,7 +71,7 @@ class PreguntaController extends Controller
       'archivo_preguntas'  => 'required|mimes:xls,xlsx'
       ]);
 
-      $file = $request->file('archivo_preguntas');
+      $file = $request->file('archivo_preguntas')->store('temp');
       Excel::import(new PreguntaImport, $file);
 
       return redirect()->route('pregunta.index')->with('status', 'importacion de preguntas fue completada con exito');

@@ -14,19 +14,19 @@ class PreguntaImport implements OnEachRow, WithHeadingRow
     {
         $rowIndex = $row->getIndex();
         $row      = $row->toArray();
-        
+
         dd($row);
 
         Validator::make($row->toArray(), [
              '*.0' => 'required',
          ])->validate();
 
-        $enunciado = Pregunta::where('enunciado', '=', $row['enunciado'])->first();
+        $enunciado = Pregunta::where('enunciado', '=', $row['enunciado'] ?? $row['pregunta'])->first();
         if (is_null($enunciado)) {
             $asignatura_id = Asignatura::select('id')->where('nombre', '=', $row['asignatura'])->first();
             $pregunta = Pregunta::create([
                 'enunciado'            => $row['enunciado'] ?? $row['pregunta'],
-                'respuesta_correcta'   => $row['respuesta_correcta'],
+                'respuesta_correcta'   => $row['respuesta_correcta'] ?? $row['respuesta'],
                 'propietario_pregunta' => $row['propietario_pregunta'] ?? $row['propietario'],
                 'asignatura_id'        => $asignatura_id->id,
             ]);

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Evaluacion;
+use App\Models\Evaluacion;
 
 class EvaluacionController extends Controller
 {
@@ -16,7 +16,7 @@ class EvaluacionController extends Controller
     {
        $evaluaciones = Evaluacion::join('users', 'users.id', '=', 'evaluacion.users_id')
        ->where('evaluacion.estado','Realizada')
-       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Aig', 'evaluacion.tiempoEstipulado')
+       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Asig', 'evaluacion.tiempoEstipulado')
        ->get();
        //return $evaluaciones;
        return view('Inicio/evaluacionC', compact('evaluaciones'));
@@ -26,7 +26,7 @@ class EvaluacionController extends Controller
     {
        $evaluaciones = Evaluacion::where('users.id' , $id)
        ->join('users', 'users.id', '=', 'evaluacion.users_id')
-       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Aig', 'evaluacion.tiempoEstipulado')
+       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Asig', 'evaluacion.tiempoEstipulado')
        ->get();
        //return $evaluaciones;
        return view('Inicio.mysPuebasCompletas', compact('evaluaciones'));
@@ -36,7 +36,7 @@ class EvaluacionController extends Controller
      public function consultaCompleta()
     {
        $evaluaciones = Evaluacion::join('users', 'users.id', '=', 'evaluacion.users_id')
-       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Aig', 'evaluacion.tiempoEstipulado')
+       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Asig', 'evaluacion.tiempoEstipulado')
        ->get();
       // return $evaluaciones;
        return view('Inicio.pruebasConsulta', compact('evaluaciones'));
@@ -72,7 +72,7 @@ class EvaluacionController extends Controller
 
         $evaluaciones = Evaluacion::where('users.id' , request('id_U'))
        ->join('users', 'users.id', '=', 'evaluacion.users_id')
-       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Aig', 'evaluacion.tiempoEstipulado')
+       ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.Asignatura_eval', 'evaluacion.cant_Preg_Asig', 'evaluacion.tiempoEstipulado')
        ->get();
 
         //return $request;
@@ -90,7 +90,7 @@ class EvaluacionController extends Controller
          $Meval = Evaluacion::where('users_id' , $id)
          ->where('evaluacion.estado','Realizada')
          ->join('users', 'users.id', '=', 'evaluacion.users_id')
-         ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.cant_Preg_Aig', 'evaluacion.Asignatura_eval', 'evaluacion.tiempoEstipulado')
+         ->select('evaluacion.id as id', 'users.name as autor' , 'users.numero_Documento as nAutor', 'evaluacion.descripcion', 'evaluacion.fecha', 'evaluacion.estado', 'evaluacion.cant_Preg_Asig', 'evaluacion.Asignatura_eval', 'evaluacion.tiempoEstipulado')
          ->get();
          //return $Meval;
          return view('Inicio/mysEvaluaciones', compact('Meval'));

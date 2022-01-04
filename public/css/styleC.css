@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	color: white;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.sidebar{
+	position: fixed;
+	width: 250px;
+	height: 100%;
+	left: 0px;
+	background: #1b1b1b;
+	top: 0;
+}
+
+.sidebar .text{
+	color: white;
+	font-size: 25px;
+	font-weight: 600;
+	line-height: 65px;
+	text-align: center;
+	background: #1e1e1e;
+}
+
+.sidebar ul{
+	background: #1b1b1b;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+}
+.sidebar ul li{
+	line-height: 60px;
+	border-bottom:1px solid rgba(255,255,255,0.1);
+}
+.sidebar ul li:last-child{
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.sidebar ul li a{
+	position: relative;
+	color: white;
+	text-decoration: none;
+	font-size: 18px;
+	padding-left: 30px;
+	font-weight: 500;
+	display: block;
+	width: 100%;
+	border-left: 3px solid transparent;
+}
+.sidebar ul li.active a{
+	color: cyan;
+	background: #1e1e1e;
+	border-left-color: cyan;
+}
+.sidebar ul ul{
+	position: static;
+	display: none;
+}
+.sidebar ul .feat-show.show{
+	display: block;
+}
+.sidebar ul .serv-show.show1{
+	display: block;
+}
+.sidebar ul .preg-show.show2{
+	display: block;
+}
+.sidebar ul .inf-show.show4{
+	display: block;
+}
+.sidebar ul ul li{
+	line-height: 42px;
+	border-bottom: none;
+}
+.sidebar ul ul li a{
+	font-size: 17px;
+	color: #e6e6e6;
+	padding-left: 80px;
+}
+.sidebar ul li.active ul li a{
+	color: #e6e6e6;;
+	background: #1b1b1b;
+	border-left-color: transparent;
+}
+.sidebar ul ul li a:hover{
+	color: cyan!important;
+	background: #1e1e1e!important;
+}
+.sidebar ul  li a span{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transform: translateY(-50%);
+	font-size: 22px;
+	transition: transform 0.4s;
+}
+.sidebar ul  li a span.rotate{
+	transform: translateY(-50%) rotate(-180deg);
+}
+
+
+header {
+	position: fixed;
+	left: 250px;
+	top: 0;
+	z-index: 100;
+	width: calc(100% - 250px);
+	background: #000;
+	height: 60px;
+	padding: 0rem 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+}
+
+header ul a {
+	color: #fff;
+}
+
+main {
+	margin-top: 60px;
+	background: #f1f5f9;
+	min-height: 90vh;
+	padding: 2rem 4rem;
+
+}
+
+
+
+.card input, label{
+	width: 240px;
+	display: inline-block;
+
+}
+
+.container{
+	width: 100% !important;
+	margin: 0 !important;
+}
+
+
+
+.main-content {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 81%;
+	margin: 0;
+}
+
+
+.main-content label {
+	color: #000000;
+}
+
+.main-content input {
+	color: #000000;
+	text-align: center;
+	background-color: #ECF0F1;
+	border-radius: 3px;
+	font-size: 10px;
+	font-weight: 200;
+	padding: 10px 0;
+	width: 250px;
+	transition: border .5s;
+}
+
+ .main-content .btn {
+  border: 2px solid transparent;
+  background: #3498DB;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 25px;
+  padding: 10px 0;
+  text-decoration: none;
+  text-shadow: none;
+  border-radius: 3px;
+  box-shadow: none;
+  transition: 0.25s;
+  width: 250px;
+  margin: 0 auto;
+}
+
+ .main-content .btn:hover {
+  background-color: #33FF5E;
+}
+
+.main-content input:focus {
+ border: 2px solid #3498DB;
+ box-shadow: none;
+}
+
+
+.card-header{
+	color: #000;
+}
+
+.card {
+	display: block;
+}
+
+table {
+  background: white;
+  text-align: left;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.titel-table {
+  color: #000000;
+}
+
+th, td {
+  color: #000000;
+  border: solid 1px #A5C190;
+  padding: 16px;
+}
+
+thead{
+  background-color: #1A4D19;
+  border-bottom: solid 1px #0F362D;
+}
+
+tr:nth-child(even) {
+  background-color: #ddd;
+}
+
+tr:hover td{
+  background-color: #C8EEC7;
+  color: white;
+}
+
+.btn-edit {
+	border-radius: 6px;
+	padding: 4px;
+	width: 40px;
+	height: 40px;
+}
+
+.btn-edit i{
+	color: #000;
+}
+
+
+video{
+	margin-top: 20px;
+	width: 250px;
+	height: 200px;
+	margin: auto;
+}

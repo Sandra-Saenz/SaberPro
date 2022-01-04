@@ -1,7 +1,5 @@
 @extends('layout')
 
-@section('title', 'Home')
-
 @section('content')
 <div class="app-title">
   <div>

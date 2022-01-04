@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Users_Programa;
-use App\Programa_Asignatura;
-use App\Programa;
-use App\User;
+use App\Models\Users_Programa;
+use App\Models\Programa_Asignatura;
+use App\Models\Programa;
+use App\Models\User;
 
 
 class Users_ProgramaController extends Controller

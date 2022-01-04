@@ -12,7 +12,7 @@
                 @csrf
                 <div class="modal-body">
                   <p>
-                    Subir una hoja de cálculo con las preguntas que desee guardar. con los campos de: <br>
+                    Subir una hoja de cálculo con las preguntas que desee guardar, con los campos de: <br>
                     <b>
                       enunciado | respuesta correcta | asignatura | propietario pregunta | respuesta a | respuesta b | respuesta c | respuesta d
                     </b>

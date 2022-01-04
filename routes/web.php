@@ -7,14 +7,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/usuario', 'HomeController@getUser')->name('usuario');
 
 Route::view('/eval', 'Inicio.index')->name('prueba');
 Route::view('/inicio', 'Inicio.pregguntas')->name('preguntas');
 Route::view('/md', 'misDT')->name('misDatos');
 Route::view('/calendario', 'calendario')->name('calendario');
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/usuario', 'HomeController@getUser')->name('usuario');
 
 Route::get('/consulta', 'UserController@index')->name('vusuario.index');
 Route::get('/crear', 'UserController@create')->name('vusuario.create');
@@ -31,8 +30,8 @@ Route::get('/ProgramaAsignatura/program/{id}', 'Programa_AsignaturaController@ca
 Route::get('/ProgramaAsignatura/{id}', 'Programa_AsignaturaController@show')->name('ProgramaAsignatura.obtener');
 
 Route::get('/evaluacionA', 'EvaluacionController@index')->name('vevaluacion.index');
-Route::get('/consultaPruebas ', 'EvaluacionController@consultaCompleta')->name('vprueva.consultaCompleta');
-Route::get('/pruebas/{id} ', 'EvaluacionController@consultaIndividualCompleta')->name('vprueva.consulta');
+Route::get('/consultaPruebas', 'EvaluacionController@consultaCompleta')->name('vprueva.consultaCompleta');
+Route::get('/pruebas/{id}', 'EvaluacionController@consultaIndividualCompleta')->name('vprueva.consulta');
 Route::post('/evaluacion', 'EvaluacionController@store')->name('vevaluacion.store');
 Route::get('/evaluacionE/{id}', 'EvaluacionController@show')->name('vevaluacion.show');
 

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Informe;
+use App\Models\Informe;
 
 
 class InformeController extends Controller

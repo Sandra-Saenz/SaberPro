@@ -8,7 +8,7 @@
     <div class="tile-body">
 
 
-        <form method="POST" action="{{ route('vusuario.store') }}">
+    <form method="POST" action="{{ "#" }}">
             @csrf
         <div class="form-group row">
           <label class="control-label col-md-3">TD:</label>
@@ -62,7 +62,7 @@
           </div>
         </div>
         <div class="form-group row">
-          <label class="control-label col-md-3">Confirme Passwore:</label>
+          <label class="control-label col-md-3">Confirme Password:</label>
           <div class="col-md-8">
             <input class="form-control" id="password-confirm" type="password" name="password_confirmation" required autocomplete="new-password" placeholder="Enter full Passwore">
           </div>
