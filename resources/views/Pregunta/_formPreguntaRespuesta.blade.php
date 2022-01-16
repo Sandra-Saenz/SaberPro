@@ -1,5 +1,12 @@
 @csrf
 <div class="form-group row">
+  <label class="control-label col-md-2">Nombre</label>
+  <div class="col-md-10">
+
+  </div>
+</div>
+
+<div class="form-group row">
   <div class="col-md-6">
     <div class="py-2">
       <textarea class="form-control bg-light shadow-sm" name="enunciado" required rows="6" placeholder="Enunciado de la pregunta"
@@ -74,10 +81,9 @@
   </div>
 </div>
 
-<button class="btn btn-primary btn-md btn-block">
-  {{$btnText}}
-</button>
-
-<a class="btn btn-link btn-block" href="{{ route('pregunta.index') }}">
-  Cancelar
-</a>
+<div class="form-group row mb-0">
+    <div class="col-md-6 offset-md-4">
+        <button type="submit" class="btn btn-primary px-3">{{$btnText}}</button>
+        <a class="btn btn-link px-3" href="{{ route('pregunta.index') }}">Cancelar</a>
+    </div>
+</div>

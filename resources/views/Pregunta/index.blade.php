@@ -1,50 +1,51 @@
 @extends('layout')
 
-@section('title', 'Preguntas')
+@section('title', 'Pregunta')
 
 @section('content')
-  <div class="container">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="display-4 mb-0">Preguntas</h1>
+  <div class="app-title">
+    <div>
+      <h1><i class="fa fa-th-list"></i> Pregunta</h1>
+      <p>Consultar Preguntas</p>
     </div>
-      <p class="lead text-secondary">Preguntas y respuesta que están registradas para estudiar para las pruebas saber PRO</p>
+    <ul class="app-breadcrumb breadcrumb side">
+      <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
+      <li class="breadcrumb-item">Pregunta</li>
+      <li class="breadcrumb-item active"><a href="{{ route('pregunta.index') }}">Consultar</a></li>
+    </ul>
+  </div>
 
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <a class="btn btn-primary" href="{{route('pregunta.create')}}">Crear pregunta</a>
-        <a class="btn btn-primary" href="{{route('pregunta.upload')}}" data-toggle="modal" data-target="#upload">Cargar preguntas</a> <br>
-
-        <form class="navbar-form navbar-left pull-right" method="get" role="search">
-          <div class="input-group">
-            <select class="form-control bg-light shadow-sm" name="asignatura">
-                <option value="">seleccionar asignatura</option>
-                @foreach($asignatura as $asignature)
-                <option value="{{$asignature->id}}">{{$asignature->nombre}}</option>
-                @endforeach
-            </select>
-            <span class="input-group-btn px-2">
-              <button type="submit" class="btn btn-primary">Buscar</button>
-            </span>
-          </div>
-        </form>
-      </div>
-
-      <div class="table-responsive">
-        <table class="table table-hover align-items-center">
-            <thead>
-            <tr class="table-primary">
-                <th>ID</th>
-                <th>ENUNCIADO</th>
-                <th>RESPUESTA A</th>
-                <th>RESPUESTA B</th>
-                <th>RESPUESTA C</th>
-                <th>RESPUESTA D</th>
-                <th>PROPIETARIO PREGUNTA</th>
-                <th>ASIGNATURA</th>
-                <th>OPCIONES</th>
-            </tr>
-          </thead>
-                @foreach($pregunta as $ask)
+      <div class="row">
+        <div class="col-md-12">
+          <div class="tile">
+            <div class="form-group row">
+              <div class="col-md-10">
+                  <h2 class="display-4 mb-0">PREGUNTAS</h2>
+              </div>
+              <div class="col-md-2">
+                  <a class="btn btn-primary btn-md" href="{{route('pregunta.upload')}}" data-toggle="modal" data-target="#upload">Cargar preguntas</a> <br>
+              </div>
+            </div>
+            <div class="tile-body">
+                <p class="breadcrumb-item">Preguntas y respuesta que están registradas para estudiar las pruebas saber PRO</p>
+                <hr>
+              <div class="table-responsive">
+                <table class="table table-hover table-bordered" id="sampleTable">
+                  <thead>
+                      <tr>
+                          <th scope="col">ID</th>
+                          <th scope="col">ENUNCIADO</th>
+                          <th scope="col">RESPUESTA A</th>
+                          <th scope="col">RESPUESTA B</th>
+                          <th scope="col">RESPUESTA C</th>
+                          <th scope="col">RESPUESTA D</th>
+                          <th scope="col">PROPIETARIO PREGUNTA</th>
+                          <th scope="col">ASIGNATURA</th>
+                          <th scope="col">OPCIONES</th>
+                      </tr>
+                  </thead>
                   <tbody>
+                @foreach($pregunta as $ask)
                       <tr>
                             <td>{{ $ask->id }}</td>
                             <td>{{ $ask->enunciado }}</td>
@@ -56,14 +57,10 @@
                             @endforeach
                             <td>{{ $ask->propietario_pregunta }}</td>
                             <td>{{ $ask->preguntaAsignatura->nombre }}</td>
-
                               <td>
-                                  <a href="{{ route('pregunta.edit', $ask->id) }}" class="btn btn-sm btn-primary">
-                                      Editar
-                                  </a>
-                                  <a href="{{ route('pregunta.show', $ask->id) }}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#show">
-                                      Ver
-                                  </a>
+                                {{-- <button type="button" class="btn-edit" data-toggle="modal" data-target="#ventanaModal{{$faculty->id}}">Editar</button> --}}
+                                  <a href="{{ route('pregunta.edit', $ask->id) }}" class="btn btn-sm btn-primary">Editar</a>
+                                  <a href="{{ route('pregunta.show', $ask->id) }}" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#show">Ver</a>
                              </td>
                        </tr>
                    </tbody>
@@ -71,6 +68,9 @@
         </table>
         @include('pregunta.upload')
       </div>
-      {{ $pregunta->links() }}
+    </div>
+  </div>
+</div>
+</div>
 </div>
 @endsection

@@ -1,12 +1,14 @@
 @csrf
-<div class="form-group">
-  <input class="form-control bg-light shadow-sm" type="text" name="nombre" placeholder="nombre de la facultad" value="{{old('nombre', $facultad->nombre)}}">
+<div class="form-group row">
+  <label class="control-label col-md-2">Nombre</label>
+  <div class="col-md-10">
+      <input class="form-control" type="text" name="nombre" placeholder="nombre de la facultad" value="{{old('nombre', $facultad->nombre)}}" required autocomplete="nombre" autofocus>
+  </div>
 </div>
 
-<button class="btn btn-primary btn-md btn-block">
-  {{$btnText}}
-</button>
-
-<a class="btn btn-link btn-block" href="{{ route('facultad.index') }}">
-  Cancelar
-</a>
+<div class="form-group row mb-0">
+    <div class="col-md-6 offset-md-4">
+        <button type="submit" class="btn btn-primary px-3">{{$btnText}}</button>
+        <a class="btn btn-link px-3" href="{{ route('facultad.index') }}">Cancelar</a>
+    </div>
+</div>
